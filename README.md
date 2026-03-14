@@ -7,7 +7,6 @@
 ## 📌 프로젝트 소개
 
 음식 주문 관리 플랫폼의 프론트엔드입니다.  
-사용자(USER), 가게 사장님(OWNER), 관리자(MASTER/MANAGER) 권한에 따라 서로 다른 화면과 기능을 제공합니다.
 
 ---
 
@@ -25,14 +24,22 @@
 ## 📁 프로젝트 구조
 
 ```
-react-FE/
-├── api/          # 백엔드 API 호출 함수 모음
-├── assets/       # 이미지, 아이콘 등 정적 리소스
-├── pages/        # 페이지 컴포넌트
-├── App.jsx       # 라우팅 및 앱 진입점
-├── App.css       # 전역 스타일
-├── main.jsx      # React DOM 렌더링
-└── index.css     # 기본 CSS 리셋 / 전역 변수
+src
+├─ api
+│   └─ axios.js           # axios 공통 설정 (baseURL, interceptor 등)
+│
+├─ assets
+│   └─ react.svg          # 정적 이미지 파일
+│
+├─ pages
+│   ├─ LoginPage.jsx      # 로그인 화면
+│   ├─ StoreListPage.jsx  # 가게 목록 화면
+│   └─ StoreMenuPage.jsx  # 가게 메뉴 화면
+│
+├─ App.css              
+├─ App.jsx                # React Router 설정
+├─ index.css              # 전체 글로벌 스타일
+└─ main.jsx               # React 앱 시작점 (ReactDOM.render)
 ```
 
 ---
