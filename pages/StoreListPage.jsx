@@ -24,18 +24,43 @@ function StoreListPage() {
       });
   }, [navigate]);
 
-  return (
-    <div>
-      <h1>가게 목록</h1>
 
-      {stores.map(store => (
-        <div key={store.id}>
+  const handleStoreClick = (storeId) => {
+    navigate(`/menus/${storeId}`);
+  };
+
+
+
+  
+
+return (
+  <div>
+    <h1>가게 목록</h1>
+
+    {stores.map(store => {
+
+      console.log("store 객체:", store);
+
+      return (
+        <div
+          key={store.storeId}
+          onClick={() => handleStoreClick(store.storeId)}
+          style={{
+            cursor:"pointer",
+            border:"1px solid gray",
+            margin:"10px",
+            padding:"10px"
+          }}
+        >
           <h3>{store.name}</h3>
           <p>{store.address}</p>
         </div>
-      ))}
-    </div>
-  );
+      );
+
+    })}
+
+  </div>
+);
 }
 
 export default StoreListPage;
